@@ -37,6 +37,11 @@ pipeline {
                 archiveArtifacts artifacts: 'target/*.jar'
             }
         }
+        stage('Run Application') {
+            steps {
+                sh 'java -cp target/classes App'
+            }
+        }
     }
 
     post {
